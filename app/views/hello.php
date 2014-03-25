@@ -19,7 +19,7 @@
   </ul>
 
   <form ng-submit="addTask()">
-    <input type="text" placeholder="Assignee" ng-model="newTaskAssignee">
+    <select ng-model="newTaskAssignee" ng-options="master.name for master in masters"></select>
     <input type="text" placeholder="Monster" ng-model="newTaskMonsterName">
     <input type="text" placeholder="Number" ng-model="newTaskNumber">
     <button type="submit">Add new Task</button>
