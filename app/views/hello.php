@@ -9,11 +9,8 @@
 
   <h1>Tasks</h1>
 
-  <input type="text" placeholder="Sort Tasks" ng-model="searchBox">
-
   <ul>
     <li ng-repeat="task in tasks | filter:searchBox">
-      <input type="checkbox" ng-model="task.status">
       {{ task.assignee_id }} assigned you {{ task.number }} {{ task.monster_name }} - {{ task_statuses[task.status].name }}
     </li>
   </ul>
