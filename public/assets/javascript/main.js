@@ -33,12 +33,14 @@ function TasksController ($scope, $http) {
    *
    * @return void
    */
-  $scope.addTask = function function_name () {
+  $scope.addTask = function addTask () {
     // Grab the previous Task
     var previousTask = $scope.tasks.pop();
 
     // Mark the previous Task as completed
-    previousTask.status = $scope.task_statuses[3].name;
+    previousTask.status = $scope.task_statuses[3].id;
+
+    console.log(previousTask);
 
     // Push the updated Task back to the scope
     $scope.tasks.push(previousTask);
