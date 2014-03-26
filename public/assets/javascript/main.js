@@ -1,8 +1,17 @@
 function TasksController ($scope, $http) {
   $scope.tasks = [
-    {'id': 1, 'assignee_id': 1, 'status': 3, 'monster_name': 'Mithril Dragons', 'number': 76},
-    {'id': 2, 'assignee_id': 1, 'status': 2, 'monster_name': 'Dust Devils', 'number': 180},
-    {'id': 3, 'assignee_id': 1, 'status': 1, 'monster_name': 'Dark Beasts', 'number': 172}
+    {'id': 1, 'user_id': 1, 'assignee_id': 1, 'status': 3, 'task_number': 1, 'monster_id': 1, 'number': 76},
+    {'id': 2, 'user_id': 1, 'assignee_id': 1, 'status': 2, 'task_number': 2, 'monster_id': 2, 'number': 180},
+    {'id': 3, 'user_id': 1, 'assignee_id': 1, 'status': 1, 'task_number': 3, 'monster_id': 3, 'number': 172}
+  ];
+
+  $scope.slayer_monsters = [
+    {'id': 1, 'name': 'Iron Dragons'},
+    {'id': 2, 'name': 'Dark Beasts'},
+    {'id': 3, 'name': 'Blue Dragons'},
+    {'id': 4, 'name': 'Dust Devils'},
+    {'id': 5, 'name': 'Steel Dragons'},
+    {'id': 6, 'name': 'Hell Hounds'}
   ];
 
   $scope.masters = [
@@ -40,7 +49,7 @@ function TasksController ($scope, $http) {
     // Mark the previous Task as completed
     previousTask.status = $scope.task_statuses[3].id;
 
-    console.log(previousTask);
+    // console.log(previousTask);
 
     // Push the updated Task back to the scope
     $scope.tasks.push(previousTask);
@@ -48,7 +57,7 @@ function TasksController ($scope, $http) {
     // Setup the new Task
     var task = {
       assignee_id: $scope.newTaskAssignee.name,
-      monster_name: $scope.newTaskMonsterName,
+      monster_id: $scope.newTaskMonsterName,
       number: $scope.newTaskNumber,
       status: 0
     };

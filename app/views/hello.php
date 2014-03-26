@@ -11,7 +11,7 @@
 
   <ul>
     <li ng-repeat="task in tasks | filter:searchBox">
-      {{ task.assignee_id }} assigned you {{ task.number }} {{ task.monster_name }} - {{ task_statuses[task.status].name }}
+      {{ task.assignee_id }} assigned you {{ task.number }} {{ slayer_monsters[task.monster_id].name }} - {{ task_statuses[task.status].name }}
     </li>
   </ul>
 
