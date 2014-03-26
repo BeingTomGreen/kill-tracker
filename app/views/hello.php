@@ -14,7 +14,7 @@
   <ul>
     <li ng-repeat="task in tasks | filter:searchBox">
       <input type="checkbox" ng-model="task.status">
-      {{ task.assignee_id }} assigned you {{ task.number }} {{ task.monster_name }} - {{ task.status }}
+      {{ task.assignee_id }} assigned you {{ task.number }} {{ task.monster_name }} - {{ task_statuses[task.status].name }}
     </li>
   </ul>
 

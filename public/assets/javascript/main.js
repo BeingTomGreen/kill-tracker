@@ -1,8 +1,8 @@
 function TasksController ($scope, $http) {
   $scope.tasks = [
-    {'id': 1, 'assignee_id': 1, 'status': 'Completed', 'monster_name': 'Mithril Dragons', 'number': 76},
-    {'id': 2, 'assignee_id': 1, 'status': 'Skipped', 'monster_name': 'Dust Devils', 'number': 180},
-    {'id': 3, 'assignee_id': 1, 'status': 'In Progress', 'monster_name': 'Dark Beasts', 'number': 172}
+    {'id': 1, 'assignee_id': 1, 'status': 3, 'monster_name': 'Mithril Dragons', 'number': 76},
+    {'id': 2, 'assignee_id': 1, 'status': 2, 'monster_name': 'Dust Devils', 'number': 180},
+    {'id': 3, 'assignee_id': 1, 'status': 1, 'monster_name': 'Dark Beasts', 'number': 172}
   ];
 
   $scope.masters = [
@@ -15,10 +15,10 @@ function TasksController ($scope, $http) {
   ];
 
   $scope.task_statuses = [
-    {'id': 1, 'name': 'In Progress'},
-    {'id': 2, 'name': 'Completed'},
-    {'id': 3, 'name': 'Skipped'},
-    {'id': 4, 'name': 'Blocked'}
+    {'id': 0, 'name': 'In Progress'},
+    {'id': 1, 'name': 'Skipped'},
+    {'id': 2, 'name': 'Blocked'},
+    {'id': 3, 'name': 'Completed'}
   ];
 
   /*
@@ -34,29 +34,25 @@ function TasksController ($scope, $http) {
    * @return void
    */
   $scope.addTask = function function_name () {
-    // Grab the old task
+    // Grab the previous task
     var previousTask = $scope.tasks.pop();
 
     // Mark the previous task as completed
-    previousTask.status = $scope.task_statuses[2].name;
+    previousTask.status = $scope.task_statuses[4].name;
 
-    // Push the new Task to the scope
+    // Push the updated task back to the scope
     $scope.tasks.push(previousTask);
 
-    // Store the new Task object
+    // Setup the new task
     var task = {
       assignee_id: $scope.newTaskAssignee.name,
       monster_name: $scope.newTaskMonsterName,
       number: $scope.newTaskNumber,
-      status: "In Progress"
+      status: 1
     };
 
     // Push the new Task to the scope
     $scope.tasks.push(task);
-
-    //$scope.tasks.pop(previousTask);
-
-
 
     // Push the new task to the API
     // $http.post('/api/v1/kills', task);
