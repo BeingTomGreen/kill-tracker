@@ -34,21 +34,21 @@ function TasksController ($scope, $http) {
    * @return void
    */
   $scope.addTask = function function_name () {
-    // Grab the previous task
+    // Grab the previous Task
     var previousTask = $scope.tasks.pop();
 
-    // Mark the previous task as completed
+    // Mark the previous Task as completed
     previousTask.status = $scope.task_statuses[3].name;
 
-    // Push the updated task back to the scope
+    // Push the updated Task back to the scope
     $scope.tasks.push(previousTask);
 
-    // Setup the new task
+    // Setup the new Task
     var task = {
       assignee_id: $scope.newTaskAssignee.name,
       monster_name: $scope.newTaskMonsterName,
       number: $scope.newTaskNumber,
-      status: 1
+      status: 0
     };
 
     // Push the new Task to the scope
