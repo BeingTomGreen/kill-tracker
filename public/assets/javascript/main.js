@@ -49,8 +49,6 @@ function TasksController ($scope, $http) {
     // Mark the previous Task as completed
     previousTask.status = $scope.task_statuses[3].id;
 
-    // console.log(previousTask);
-
     // Push the updated Task back to the scope
     $scope.tasks.push(previousTask);
 
