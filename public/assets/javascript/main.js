@@ -1,6 +1,6 @@
 function TasksController ($scope, $http) {
   // Grab out Task list from the API and assign it to the scope
-  $http.get('/api/tasks').success(function (tasks) {
+  $http.get('/api/task').success(function (tasks) {
     $scope.tasks = tasks;
   });
 
@@ -56,7 +56,7 @@ function TasksController ($scope, $http) {
     $scope.tasks.push(task);
 
     // Push the new task to the API
-    // $http.post('/api/v1/kills', task);
+    // $http.post('/api/task', task);
   }
 
 }

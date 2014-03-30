@@ -1,6 +1,6 @@
 <?php
 
-class SlayerTaskAPIController extends \BaseController {
+class SlayerTaskAPIController extends BaseController {
 
   private $slayerTaskRepository = null;
 
