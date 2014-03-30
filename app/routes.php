@@ -8,6 +8,6 @@ Route::get('/', function()
 // API routes
 Route::group(['prefix' => 'api'], function()
 {
-  // Events
+  // Task API
   Route::resource('task', 'SlayerTaskAPIController');
 });
