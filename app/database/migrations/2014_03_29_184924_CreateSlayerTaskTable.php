@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSlayerTasksTable extends Migration {
+class CreateSlayerTaskTable extends Migration {
 
   /**
    * Run the migrations.
@@ -14,12 +14,11 @@ class CreateSlayerTasksTable extends Migration {
     Schema::create('slayer_tasks', function($table)
     {
       $table->increments('id');
-      $table->smallInteger('task_number');
       $table->smallInteger('user_id')->references('id')->on('users');
+      $table->smallInteger('assignee_id')->references('id')->on('slayer_masters');
       $table->smallInteger('monster_id')->references('id')->on('users');
-      $table->smallInteger('assignee')->references('id')->on('slayer_masters');
+      $table->smallInteger('status');
       $table->smallInteger('count');
-      $table->smallInteger('completed');
       $table->timestamps();
     });
   }

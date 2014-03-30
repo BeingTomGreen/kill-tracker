@@ -1,8 +1,8 @@
 function TasksController ($scope, $http) {
   $scope.tasks = [
-    {'id': 1, 'user_id': 1, 'assignee_id': 1, 'status': 3, 'task_number': 1, 'monster_id': 1, 'number': 76},
-    {'id': 2, 'user_id': 1, 'assignee_id': 1, 'status': 2, 'task_number': 2, 'monster_id': 2, 'number': 180},
-    {'id': 3, 'user_id': 1, 'assignee_id': 1, 'status': 1, 'task_number': 3, 'monster_id': 3, 'number': 172}
+    {'id': 1, 'user_id': 1, 'assignee_id': 1, 'status': 3, 'monster_id': 1, 'count': 76},
+    {'id': 2, 'user_id': 1, 'assignee_id': 1, 'status': 2, 'monster_id': 2, 'count': 180},
+    {'id': 3, 'user_id': 1, 'assignee_id': 1, 'status': 1, 'monster_id': 3, 'count': 172}
   ];
 
   $scope.slayer_monsters = [
@@ -56,7 +56,7 @@ function TasksController ($scope, $http) {
     var task = {
       assignee_id: $scope.newTaskAssignee.name,
       monster_id: $scope.newTaskMonsterName,
-      number: $scope.newTaskNumber,
+      count: $scope.newTaskCount,
       status: 0
     };
 
