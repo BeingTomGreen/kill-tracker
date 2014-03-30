@@ -1,9 +1,8 @@
 function TasksController ($scope, $http) {
-  $scope.tasks = [
-    {'id': 1, 'user_id': 1, 'assignee_id': 1, 'status': 3, 'monster_id': 1, 'count': 76},
-    {'id': 2, 'user_id': 1, 'assignee_id': 1, 'status': 2, 'monster_id': 2, 'count': 180},
-    {'id': 3, 'user_id': 1, 'assignee_id': 1, 'status': 1, 'monster_id': 3, 'count': 172}
-  ];
+  // Grab out Task list from the API and assign it to the scope
+  $http.get('/api/tasks').success(function (tasks) {
+    $scope.tasks = tasks;
+  });
 
   $scope.slayer_monsters = [
     {'id': 1, 'name': 'Iron Dragons'},
@@ -29,13 +28,6 @@ function TasksController ($scope, $http) {
     {'id': 2, 'name': 'Blocked'},
     {'id': 3, 'name': 'Completed'}
   ];
-
-  /*
-  // Grab out Task list from the API and assign it to the scope
-  $http.get('/api/v1/tasks').success(function (tasks) {
-    $scope.tasks = tasks;
-  });
-  */
 
   /**
    * Add a new Task
