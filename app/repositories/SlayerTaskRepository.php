@@ -6,6 +6,7 @@ class SlayerTaskRepository {
    * Returns all Slayer tasks belonging to a specific user
    *
    * @param  int $user_id The user's ID
+   *
    * @return Illuminate\Database\Eloquent\Collection The tasks Collection
    */
   public function getUsersTasks($user_id)
@@ -16,12 +17,13 @@ class SlayerTaskRepository {
   /**
    * Stores a new Slayer task
    *
-   * @param  int $ input
-   * @return Illuminate\Database\Eloquent\Collection The tasks Collection
+   * @param  array $input
+   *
+   * @return
    */
-  public function storeTask($user_id)
+  public function store(array $input)
   {
-    return SlayerTask::where('user_id', '=', $user_id)->get();
+    return (new SlayerTask())->fill($input)->save();
   }
 
 }

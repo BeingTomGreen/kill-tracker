@@ -50,7 +50,7 @@ class SlayerTaskAPIController extends BaseController {
 	 */
 	public function store()
 	{
-		exit();
+		dd($this->slayerTaskRepository->store(Input::all()));
 	}
 
 	/**
