@@ -14,12 +14,12 @@ function TasksController ($scope, $http) {
   ];
 
   $scope.masters = [
-    {'id': 1, 'name': 'Mazchna'},
-    {'id': 2, 'name': 'Vannaka'},
-    {'id': 3, 'name': 'Chaeldar'},
-    {'id': 4, 'name': 'Sumona'},
-    {'id': 5, 'name': 'Duradel/Lapalok'},
-    {'id': 6, 'name': 'Kuradal'}
+    {'id': 0, 'name': 'Mazchna'},
+    {'id': 1, 'name': 'Vannaka'},
+    {'id': 2, 'name': 'Chaeldar'},
+    {'id': 3, 'name': 'Sumona'},
+    {'id': 4, 'name': 'Duradel/Lapalok'},
+    {'id': 5, 'name': 'Kuradal'}
   ];
 
   $scope.task_statuses = [
@@ -46,17 +46,18 @@ function TasksController ($scope, $http) {
 
     // Setup the new Task
     var task = {
-      assignee_id: $scope.newTaskAssignee.name,
-      monster_id: $scope.newTaskMonsterName,
+      user_id: 1,
+      assignee_id: $scope.newTaskAssignee.id,
+      monster_id: $scope.newTaskMonster.id,
       count: $scope.newTaskCount,
-      status: 0
+      status: $scope.newTaskStatus.id
     };
 
     // Push the new Task to the scope
     $scope.tasks.push(task);
 
     // Push the new task to the API
-    // $http.post('/api/task', task);
+    $http.post('/api/task', task);
   }
 
 }

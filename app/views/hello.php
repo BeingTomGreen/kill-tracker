@@ -11,14 +11,15 @@
 
   <ul>
     <li ng-repeat="task in tasks | filter:searchBox">
-      {{ task.assignee_id }} assigned you {{ task.count }} {{ slayer_monsters[task.monster_id].name }} - {{ task_statuses[task.status].name }}
+      {{ masters[task.assignee_id].name }} assigned you {{ task.count }} {{ slayer_monsters[task.monster_id].name }} - {{ task_statuses[task.status].name }}
     </li>
   </ul>
 
   <form ng-submit="addTask()">
     <select ng-model="newTaskAssignee" ng-options="master.name for master in masters"></select>
-    <input type="text" placeholder="Monster" ng-model="newTaskMonsterName">
+    <select ng-model="newTaskMonster" ng-options="monster.name for monster in slayer_monsters"></select>
     <input type="text" placeholder="Count" ng-model="newTaskCount">
+    <select ng-model="newTaskStatus" ng-options="status.name for status in task_statuses"></select>
     <button type="submit">Add new Task</button>
   </form>
 
