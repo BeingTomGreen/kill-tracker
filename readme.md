@@ -4,4 +4,4 @@
 - Add Interfaces for Repositories
 - Tests?!
 - Pull validation code from MGC, possibly throw it in a package
-- Add Interfaces
+- Filter Slayer Monsters depending on selected Slayer Master
