@@ -30,19 +30,14 @@ function TasksController ($scope, $http) {
   ];
 
   /**
-   * Add a new Task
+   * Add a new Task.
    *
    * @return void
    */
   $scope.addTask = function addTask () {
-    // Grab the previous Task
-    var previousTask = $scope.tasks.pop();
+    // Mark the previous Task as complete
+    $scope.completePreviousTask();
 
-    // Mark the previous Task as completed
-    previousTask.status = $scope.task_statuses[3].id;
-
-    // Push the updated Task back to the scope
-    $scope.tasks.push(previousTask);
 
     // Setup the new Task
     var task = {
@@ -58,6 +53,24 @@ function TasksController ($scope, $http) {
 
     // Push the new task to the API
     $http.post('/api/task', task);
+  }
+
+  /**
+   * Marks the previous Task as completed.
+   *
+   * @todo Get this posting to the API!
+   *
+   * @return void
+   */
+  $scope.completePreviousTask = function addTask () {
+    // Grab the previous Task
+    var previousTask = $scope.tasks.pop();
+
+    // Mark the previous Task as completed
+    previousTask.status = $scope.task_statuses[3].id;
+
+    // Push the updated Task back to the scope
+    $scope.tasks.push(previousTask);
   }
 
 }
