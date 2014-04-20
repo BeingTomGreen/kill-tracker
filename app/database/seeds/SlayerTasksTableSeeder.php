@@ -9,7 +9,7 @@ class SlayerTasksTableSeeder extends Seeder {
       [
       'id' => 1,
       'user_id' => 1,
-      'assignee_id' => 6,
+      'assignee_id' => 5,
       'monster_id' => 1,
       'status' => 3,
       'count' => 76
@@ -17,7 +17,7 @@ class SlayerTasksTableSeeder extends Seeder {
       [
       'id' => 2,
       'user_id' => 1,
-      'assignee_id' => 6,
+      'assignee_id' => 5,
       'monster_id' => 2,
       'status' => 2,
       'count' => 180
@@ -25,7 +25,7 @@ class SlayerTasksTableSeeder extends Seeder {
       [
       'id' => 3,
       'user_id' => 1,
-      'assignee_id' => 6,
+      'assignee_id' => 5,
       'monster_id' => 3,
       'status' => 1,
       'count' => 172
