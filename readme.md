@@ -9,4 +9,5 @@
 
 ## NOTES
 
+- Pretty sure Phil wrote a Laravel API package for properly dealing with API responses...
 - Currently the SlayerTaskAPIController manully hacks in a user login, this needs clearing up at somepoint. On MGC I've written an API Auth filter, probably makes ssense to bring that over..
